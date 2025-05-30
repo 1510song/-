@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI와 함께 성장하는 디자인과: 올바른 활용을 위한 첫걸음 - 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #F4F7F9; /* 기본 배경 */
+            color: #263238; /* Dark Text */
+        }
+        .chart-container {
+            position: relative; /* Chart.js 캔버스 컨테이너에 필요 */
+        }
+        .section-title {
+            color: #2A62B6; /* Primary Blue */
+            border-bottom: 2px solid #4ECDC4; /* Secondary Teal */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            background-color: #FFFFFF; /* Light Background (카드 배경) */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .keyword-bubble {
+            background-color: #E0F2FE; /* Supporting Light Blue */
+            color: #2A62B6; /* Primary Blue */
+            padding: 0.5rem 1rem;
+            border-radius: 9999px; /* pill shape */
+            font-size: 0.875rem;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+        /* 해라체 적용을 위한 기본 스타일 */
+        p, li,figcaption {
+            line-height: 1.8;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+        }
+        /* 리스트 스타일 */
+        ul.custom-list li {
+            position: relative;
+            padding-left: 1.5em; /* 아이콘을 위한 공간 */
+            margin-bottom: 0.5em;
+        }
+        ul.custom-list li::before {
+            content: '✔'; /* 체크 아이콘 */
+            position: absolute;
+            left: 0;
+            color: #4ECDC4; /* Secondary Teal */
+            font-weight: bold;
+        }
+        /* 인터뷰 인용구 스타일 */
+        .interview-quote {
+            border-left: 4px solid #2A62B6; /* Primary Blue */
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #546E7A; /* Slightly lighter text for quote */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-[#2A62B6] text-white py-8 px-4 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">AI와 함께 성장하는 디자인과: 올바른 활용을 위한 첫걸음</h1>
+            <p class="text-lg text-[#E0F2FE]">미림 마이스터고등학교 1학년 5반 4조 학생 공동 조사 보고서 인포그래픽</p>
+            <p class="text-sm mt-2">작성일: 2025년 5월 29일</p>
+            <p class="text-sm mt-1">작성자: 송예서, 최윤아, 강지윤, 맹제우, 김지유</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-4xl p-4 md:p-8">
+        <section id="motivation-purpose" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold section-title">1. 조사 동기와 목적</h2>
+            <article class="card">
+                <h3 class="text-xl font-semibold text-[#2A62B6] mb-3">조사 동기</h3>
+                <p>최근 인공지능(AI) 기술은 빠르게 발전하며 다양한 분야에서 활용되고 있다. 학생들 사이에서도 AI 도구 활용이 증가하고 있으나, 단순 편리함으로만 인식하거나 무분별하게 사용하는 경우도 늘고 있다. 이에 미림 마이스터고 디자인과 학생들의 AI 인식 및 활용 실태 파악은 AI 시대 교육 방향 설정에 필수적이다.</p>
+            </article>
+            <article class="card">
+                <h3 class="text-xl font-semibold text-[#2A62B6] mb-3">조사 목적</h3>
+                <p>본 조사는 디자인과 학생들의 AI 인식 및 활용 방식을 파악하여 다음 목적을 달성하고자 한다.</p>
+                <ul class="list-disc list-inside mt-2 ml-4 space-y-1 text-[#263238]">
+                    <li><strong>정보 제공:</strong> 다른 학생들의 AI 활용 구체적 사례 제시 및 다양한 활용법 소개.</li>
+                    <li><strong>인식 개선:</strong> AI에 대한 부정확하거나 단편적인 인식 교정 및 균형 잡힌 시각 제공.</li>
+                    <li><strong>활용 가이드 제시:</strong> AI의 효과적이고 책임 있는 사용법 제안, 기술 남용 방지 및 긍정적 활용 유도.</li>
+                </ul>
+                <p class="mt-3">디자인과 학생들의 창의적 사고와 시각적 표현 능력 향상을 위해, AI를 학습과 성장에 유익하게 활용하도록 지원하는 데 기여하고자 한다.</p>
+            </article>
+        </section>
+
+        <section id="research-plan" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold section-title">2. 조사 계획</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <article class="card">
+                    <h3 class="text-xl font-semibold text-[#2A62B6] mb-3">조사 기간 및 대상</h3>
+                    <p><strong>조사 기간:</strong> 5월 16일 ~ 5월 20일 (총 5일간)</p>
+                    <p><strong>조사 대상:</strong> 미림마이스터고 디자인과 1학년 5반 학생 19명 전원</p>
+                </article>
+                <article class="card">
+                    <h3 class="text-xl font-semibold text-[#2A62B6] mb-3">조사 방법</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="font-semibold text-lg text-[#4ECDC4]">설문조사</h4>
+                            <p>Google Forms 활용. 객관식 문항 2개, 주관식 문항 1개로 구성되었다.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-[#4ECDC4]">인터뷰</h4>
+                            <p>AI에 대한 학생들의 생각 파악을 위한 보조자료로 활용했다. 공통질문 2가지와 개인화된 질문 1~3가지를 활용했다.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="research-results" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold section-title">3. 조사 결과</h2>
+            
+            <article class="card mb-8">
+                <h3 class="text-xl font-semibold text-[#2A62B6] mb-4">가. 설문 조사 결과</h3>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h4 class="text-lg font-semibold text-center mb-2 text-[#4ECDC4]">AI 활용에 대한 인식</h4>
+                        <div class="chart-container w-full max-w-xs mx-auto h-64 md:h-72">
+                            <canvas id="aiPerceptionChart"></canvas>
+                        </div>
+                        <figcaption class="text-sm text-center mt-2 text-[#A9A9A9]">전체 응답자 19명 대상 설문 결과. 긍정적 응답(매우 도움 + 도움)이 89.5%에 달했다. 보고서에 따르면, 전체적으로 긍정적 응답이 94.4%로 나타났다.</figcaption>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-center mb-2 text-[#4ECDC4]">AI의 주요 활용 분야</h4>
+                        <div class="chart-container w-full max-w-md mx-auto h-72 md:h-80">
+                            <canvas id="aiUsageChart"></canvas>
+                        </div>
+                        <figcaption class="text-sm text-center mt-2 text-[#A9A9A9]">AI가 학업 보조 도구로서 가장 많이 사용되고 있음을 시사한다.</figcaption>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3 class="text-xl font-semibold text-[#2A62B6] mb-3">나. 인터뷰 결과</h3>
+                <p class="mb-4">AI에 대한 학생들의 생각을 심층적으로 파악하기 위해 인터뷰를 진행했다. 주요 내용은 다음과 같다.</p>
+                <div class="space-y-4">
+                    <div class="p-4 border border-[#E0F2FE] rounded-lg">
+                        <h4 class="font-semibold text-lg text-[#4ECDC4]">인터뷰 대상: 1515 진어진</h4>
+                        <p class="interview-quote">"사람이 하지 못하는 기술적인 방면에서 AI가 도움이 될 수 있다고 생각한다."</p>
+                    </div>
+                    <div class="p-4 border border-[#E0F2FE] rounded-lg">
+                        <h4 class="font-semibold text-lg text-[#4ECDC4]">인터뷰 대상: 장은혁</h4>
+                        <p class="interview-quote">"AI를 사용하면서 불편한 점이 없었고 아이디어 제공 측면에서 AI를 유용하게 사용 중이다."</p>
+                    </div>
+                </div>
+                <p class="mt-4">인터뷰 결과, 학생들은 AI에 대해 대체로 긍정적인 생각과 가치관을 가진 것으로 나타났다.</p>
+            </article>
+        </section>
+
+        <section id="conclusion-suggestions" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold section-title">4. 결론 및 제언</h2>
+            <article class="card">
+                <h3 class="text-xl font-semibold text-[#2A62B6] mb-3">결론</h3>
+                <p>미림 마이스터고 디자인과 학생들은 AI에 대해 대체로 긍정적으로 인식하며, 학습과 창작 과정에서 다양하게 활용하고 있다. 특히 아이디어 발상, 과제 수행, 이미지 생성 등에서 AI는 창의성과 생산성을 높이는 유용한 도구로 인식된다.</p>
+                <p class="mt-2">다만, 일부 학생들은 AI를 단순 보조 수단으로 여기거나 무분별하게 사용하는 경우가 있으며, 정보 정확성, 저작권, 윤리적 사용에 대한 인식 부족 등 해결 과제도 확인되었다. AI는 강력한 도구이지만, 이해와 활용 방식에 따라 효과와 영향이 달라질 수 있다.</p>
+            </article>
+            <article class="card">
+                <h3 class="text-xl font-semibold text-[#2A62B6] mb-3">제언 및 다짐</h3>
+                <ul class="custom-list space-y-3 mb-4">
+                    <li><strong>AI 리터러시 교육 강화:</strong> 학생 대상 AI 기본 원리, 정보 판별 능력, 저작권 및 윤리 교육 확대로 비판적 수용 및 올바른 활용 역량 강화.</li>
+                    <li><strong>디자인 분야 특화 AI 활용 워크숍 개최:</strong> 아이디어 스케치, 프로토타이핑 등 실무 적용 AI 도구 워크숍으로 창작 도구로서의 AI 활용 경험 확대.</li>
+                    <li><strong>AI 활용 가이드라인 공유 및 토론 활성화:</strong> 학교/학과 차원 가이드라인 마련, 학생 간 사례 공유 및 토론 장려로 바람직한 활용 문화 조성.</li>
+                </ul>
+                <p>앞으로 AI는 더욱 다양한 교육 환경에서 중요한 도구가 될 것이다. 우리 학생들은 이러한 변화에 능동적으로 대처하고, AI를 자신의 성장과 꿈을 실현하는 데 유익하게 활용하는 자세를 가져야 한다.</p>
+            </article>
+        </section>
+
+        <section id="references" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold section-title">5. 참고 자료</h2>
+            <article class="card">
+                <ul class="list-disc list-inside space-y-1 text-sm">
+                    <li>Google Forms 설문지 (보고서 내 링크 참조)</li>
+                    <li>인터뷰 주요 키워드 및 워드 클라우드 자료 1 (ClovaNote 링크, 보고서 내 참조)</li>
+                    <li>인터뷰 주요 키워드 및 워드 클라우드 자료 2 (ClovaNote 링크, 보고서 내 참조)</li>
+                </ul>
+                 <p class="text-xs mt-2 text-[#A9A9A9]">주: 원본 보고서에 명시된 링크를 텍스트로 표기함.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="bg-[#263238] text-white py-6 px-4 text-center">
+        <p class="text-sm">미림 마이스터고등학교 1학년 5반 4조</p>
+        <p class="text-xs mt-1">본 인포그래픽은 제공된 학생 보고서를 기반으로 AI에 의해 생성되었습니다.</p>
+    </footer>
+
+    <script>
+        // TypeScript에서 변환된 JavaScript 코드 (가상)
+
+        // 레이블 줄바꿈 함수 (약 16자 기준, 의미 단위 고려는 어려움)
+        function formatLabel(str, maxWidth) {
+            if (typeof str !== 'string') return [String(str)];
+            const lines = [];
+            let currentLine = "";
+            const words = str.replace(/([,\(])/g, '$1 ').replace(/([\)])/g, ' $1').split(/\s+/); // 괄호, 쉼표 앞뒤 공백 추가 후 분리
+
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine += (currentLine.length > 0 ? " " : "") + word;
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine.trim());
+            }
+            return lines.length > 0 ? lines : [str]; // 빈 문자열 방지
+        }
+        
+        // Chart.js 공통 옵션
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            family: "'Pretendard', sans-serif",
+                            size: 12
+                        },
+                        color: '#263238',
+                        padding: 15,
+                        boxWidth: 12,
+                        usePointStyle: true,
+                    }
+                },
+                tooltip: { // 필수 툴팁 설정
+                    enabled: true,
+                    backgroundColor: 'rgba(38, 50, 56, 0.85)', // Dark Text, 0.85 alpha
+                    titleFont: { family: "'Pretendard', sans-serif", size: 14, weight: 'bold' },
+                    bodyFont: { family: "'Pretendard', sans-serif", size: 12 },
+                    padding: 10,
+                    cornerRadius: 4,
+                    displayColors: true,
+                    boxPadding: 3,
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null && context.chart.config.type !== 'pie' && context.chart.config.type !== 'doughnut') {
+                                label += context.parsed.y + (context.dataset.unit || '%');
+                            }
+                             if (context.parsed !== null && (context.chart.config.type === 'pie' || context.chart.config.type === 'doughnut')) {
+                                label += context.label + ': ' + context.parsed + (context.dataset.unit || '명');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            },
+            animation: {
+                duration: 800,
+                easing: 'easeInOutQuart'
+            }
+        };
+        
+        // 1. AI 활용에 대한 인식 차트 (원형 차트)
+        const aiPerceptionCtx = document.getElementById('aiPerceptionChart');
+        if (aiPerceptionCtx) {
+            new Chart(aiPerceptionCtx, {
+                type: 'doughnut', // 또는 'pie'
+                data: {
+                    labels: ['매우 도움이 된다', '도움이 된다', '보통이다'],
+                    datasets: [{
+                        label: 'AI 활용 인식',
+                        data: [9, 8, 2], // 실제 응답자 수
+                        backgroundColor: [
+                            '#2A62B6', // Primary Blue
+                            '#4ECDC4', // Secondary Teal
+                            '#A9A9A9'  // Accent Grey
+                        ],
+                        borderColor: '#FFFFFF', // Light Background for separation
+                        borderWidth: 2,
+                        hoverOffset: 8,
+                        unit: '명' // 사용자 정의 단위
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    plugins: {
+                        ...commonChartOptions.plugins,
+                        legend: {
+                             ...commonChartOptions.plugins.legend,
+                             position: 'right', // 원형 차트는 범례를 오른쪽에 두는 것이 더 나을 수 있음
+                        },
+                        tooltip: {
+                            ...commonChartOptions.plugins.tooltip,
+                             callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.parsed + '명';
+                                    
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = ((context.parsed / total) * 100).toFixed(1) + '%';
+                                    return label + ' (' + percentage + ')';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 2. AI의 주요 활용 분야 차트 (막대 차트)
+        const aiUsageCtx = document.getElementById('aiUsageChart');
+        if (aiUsageCtx) {
+            const usageLabels = ['학습', '정보 검색 및 정리', '엔터테인먼트', '디자인·창작', '소통'];
+            new Chart(aiUsageCtx, {
+                type: 'bar',
+                data: {
+                    labels: usageLabels.map(label => formatLabel(label, 8)), // 8자 기준으로 레이블 줄바꿈
+                    datasets: [{
+                        label: 'AI 주요 활용 분야 (%)',
+                        data: [47.4, 26.3, 15.8, 5.3, 5.3],
+                        backgroundColor: [
+                            '#2A62B6', // Primary Blue
+                            '#4ECDC4', // Secondary Teal
+                            '#86A8E7', // Lighter blue from palette or derived
+                            '#A9A9A9', // Accent Grey
+                            '#B0BEC5'  // Another shade of grey
+                        ],
+                        borderColor: [
+                            '#204D8D',
+                            '#3AAFA6',
+                            '#6C8CC6',
+                            '#8A8A8A',
+                            '#90A4AE'
+                        ],
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        barPercentage: 0.7,
+                        categoryPercentage: 0.8,
+                        unit: '%' // 사용자 정의 단위
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    indexAxis: 'y', // 가로 막대 차트로 변경하여 레이블 공간 확보
+                     scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '응답 비율 (%)',
+                                color: '#263238',
+                                font: { family: "'Pretendard', sans-serif", size: 12, weight: '600' }
+                            },
+                            ticks: {
+                                color: '#263238',
+                                font: { family: "'Pretendard', sans-serif", size: 11 },
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        },
+                        y: {
+                             ticks: {
+                                color: '#263238',
+                                font: { family: "'Pretendard', sans-serif", size: 11 },
+                                // autoSkip: false, // 모든 레이블 표시 강제
+                            }
+                        }
+                    },
+                    plugins: {
+                         ...commonChartOptions.plugins,
+                         legend: {
+                            display: false // 단일 데이터셋이므로 범례 숨김 가능
+                         },
+                         tooltip: {
+                            ...commonChartOptions.plugins.tooltip,
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                   // 툴팁 제목을 원래 레이블(줄바꿈 전)로 표시
+                                   const originalLabelIndex = tooltipItems[0].label.split(',').join('').trim(); // formatLabel이 배열을 반환하므로, join 후 원래 인덱스 찾기
+                                   let dataIndex = -1;
+                                   // formatLabel이 배열을 반환하므로, 원본 레이블을 찾기 위한 로직이 필요.
+                                   // 여기서는 간단히 현재 레이블을 사용하거나, 원본 레이블 배열을 참조해야 함.
+                                   // 이 예제에서는 현재 표시된 레이블을 그대로 사용
+                                   return tooltipItems[0].label.replace(/,/g, ' ');
+                                },
+                                label: function(context) {
+                                    return '응답 비율: ' + context.parsed.x + '%';
+                                }
+                            }
+                         }
+                    }
+                }
+            });
+        }
+    </script>
+    </body>
+</html>
